@@ -25,6 +25,9 @@
               headers: "#2B2B2B",
               headers2: "#0B090A",
             },
+            backgroundImage: {
+              grad: "linear-gradient(180deg, rgba(76, 201, 240, 0.00) 0%, rgba(67, 97, 238, 0.30) 100%)",
+            },
           },
         },
       };
@@ -49,9 +52,11 @@
         </div>
       </div>
     </section>
-    <header class="px-[100px] py-[15px] text-[16px] font-medium">
+    <header
+      class="px-[30px] sm:px-[100px] py-4 sm:py-[15px] text-[16px] font-medium"
+    >
       <nav class="flex items-center justify-between">
-        <ul class="text-headers flex items-center gap-4">
+        <ul class="hidden text-headers sm:flex items-center gap-4">
           <li
             class="px-4 py-[13px] bg-[#4361EE4D] rounded-[30px] cursor-pointer"
           >
@@ -78,7 +83,7 @@
             Blogs
           </li>
         </ul>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 cursor-pointer">
           <span
             class="w-[50px] h-[50px] rounded-full bg-main flex items-center justify-center"
           >
@@ -86,8 +91,8 @@
           </span>
           <h1 class="text-[20px] text-[#1E1E1E] font-semibold">Rezilla</h1>
         </div>
-        <div class="flex gap-5">
-          <div class="flex items-center gap-[10px]">
+        <div class="hidden sm:flex gap-5">
+          <div class="flex items-center gap-[10px] cursor-pointer">
             <img
               src="images/icons/user.png"
               alt="user"
@@ -96,14 +101,29 @@
             <p>Login/Register</p>
           </div>
           <div
-            class="flex items-center gap-2 bg-main text-white py-[15px] px-7 rounded-[50px]"
+            class="flex items-center gap-2 bg-main text-white py-[15px] px-7 rounded-[50px] cursor-pointer"
           >
             <img src="images/icons/home.png" alt="home" class="w-5 h-5" />
             <p>Add Listing</p>
           </div>
         </div>
+        <img src="images/icons/burger.png" alt="burger" class="sm:hidden" />
       </nav>
     </header>
+    <section class="h-[100vh] bg-grad rounded-b-[800px]">
+      <div class="">
+        <span>REAL ESTATE</span>
+        <h2>Find a perfect home you love..!</h2>
+        <p>
+          Etiam eget elementum elit. Aenean dignissim dapibus vestibulum.
+          Integer a dolor eu sapien sodales vulputate ac in purus.
+        </p>
+        <div class="">
+          <img src="images/hero.png" alt="bed" />
+        </div>
+      </div>
+      <form action=""></form>
+    </section>
     <script src="main.js"></script>
   </body>
 </html>
