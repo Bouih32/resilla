@@ -28,6 +28,10 @@
             backgroundImage: {
               grad: "linear-gradient(180deg, rgba(76, 201, 240, 0.00) 0%, rgba(67, 97, 238, 0.30) 100%)",
             },
+            boxShadow: {
+              formShadow: "10px 30px 50px 0px rgba(0, 0, 0, 0.05)",
+              scrollShadow: "10px 10px 40px 0px rgba(0, 0, 0, 0.20)",
+            },
           },
         },
       };
@@ -110,19 +114,53 @@
         <img src="images/icons/burger.png" alt="burger" class="sm:hidden" />
       </nav>
     </header>
-    <section class="h-[100vh] bg-grad rounded-b-[800px]">
-      <div class="">
-        <span>REAL ESTATE</span>
-        <h2>Find a perfect home you love..!</h2>
-        <p>
+    <section
+      class="h-[100vh] bg-grad rounded-b-[800px] flex flex-col sm:flex-row items-center sm:justify-center sm:gap-[125px] gap-[40px] sm:pt-[75px] pt-[34px]"
+    >
+      <div class="sm:space-y-[20px] space-y-[10px]">
+        <span
+          class="text-secondary sm:text-[19.4px] text-[16px] font-medium tracking-[2.91px]"
+          >REAL ESTATE</span
+        >
+        <h2
+          class="sm:text-[57.3px] text-[39.8px] sm:leading-[65px] leading-[47px] text-headers2 font-semibold"
+        >
+          Find a perfect <br />
+          home you love..!
+        </h2>
+        <p
+          class="sm:text-[16px] text-[13.3px] text-paras sm:leading-[26px] leading-[22px] sm:w-[535px] w-[309px] mb-[40px]"
+        >
           Etiam eget elementum elit. Aenean dignissim dapibus vestibulum.
           Integer a dolor eu sapien sodales vulputate ac in purus.
         </p>
-        <div class="">
-          <img src="images/hero.png" alt="bed" />
+        <div
+          class="sm:h-[340px] sm:w-[540px] h-[200px] w-[333px] rounded-[20px] relative shadow-scrollShadow"
+        >
+          <img src="images/hero.png" alt="bed" class="w-full h-full" />
+          <div
+            class="flex justify-between absolute top-[50%] -translate-y-[50%] opacity-80 sm:w-[110%] w-full sm:-left-[30px]"
+          >
+            <div class="w-[40px] h-[40px] rounded-full bg-white">
+              <img src="images/arrowL.png" alt="arrow" />
+            </div>
+
+            <div class="w-[40px] h-[40px] rounded-full bg-white">
+              <img src="images/arrowR.png" alt="arrow" />
+            </div>
+          </div>
         </div>
       </div>
-      <form action=""></form>
+      <form
+        class="sm:px-[40px] sm:pt-[40px] sm:pb-[40px] px-[22px] pt-[29px] pb-[40px] sm:w-[420px] w-[333px] bg-white rounded-[30px] shadow-formShadow"
+      >
+        <div
+          class="flex justify-between border-b border-[#AAAAAA] text-[16px] font-medium text-main pb-[27px]"
+        >
+          <p>For Sale</p>
+          <p>For Rent</p>
+        </div>
+      </form>
     </section>
     <script src="main.js"></script>
   </body>
