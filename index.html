@@ -201,19 +201,19 @@
               id="sliders"
             >
               <span
-                class="bg-secondary h-1 sm:w-[100px] w-[57.414px] rounded"
+                class="bg-secondary h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
                 data-slide="0"
               ></span>
               <span
-                class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"
+                class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
                 data-slide="1"
               ></span>
               <span
-                class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"
+                class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
                 data-slide="2"
               ></span>
               <span
-                class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"
+                class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
                 data-slide="3"
               ></span>
             </div>
@@ -238,22 +238,27 @@
             >
               <input
                 type="text"
+                id="formInput"
                 placeholder="New York, San Francisco, etc"
-                class="rounded-[20px] bg-[#D4D4D433] placeholder:text-[#D4D4D4] sm:py-6 py-5 sm:pl-5 pl-[18px] focus:outline-none"
+                class="rounded-[20px] bg-[#D4D4D433] placeholder:text-[#AAAAAA] sm:py-6 py-5 sm:pl-5 pl-[18px] focus:outline-none"
               />
               <select
-                id=""
-                class="text-[#D4D4D4] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none"
+                id="firstSelect"
+                class="text-[#AAAAAA] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none sm:focus:w-[100%] focus:w-[75%]"
               >
-                <option class="">Select Property Type</option>
-                <option>Two</option>
+                <option>Select Property Type</option>
+                <option>First option</option>
+                <option>Second option</option>
+                <option>Third option</option>
               </select>
               <select
-                id=""
-                class="text-[#D4D4D4] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none"
+                id="secondSelect"
+                class="text-[#AAAAAA] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none sm:focus:w-[100%] focus:w-[75%]"
               >
                 <option>Select Rooms</option>
-                <option>Two</option>
+                <option>First option</option>
+                <option>Second option</option>
+                <option>Third option</option>
               </select>
             </div>
             <div class="flex gap-2.5 items-center">
@@ -265,7 +270,8 @@
               <p class="text-[13.3px] text-main">Advance Search</p>
             </div>
             <div
-              class="flex justify-center items-center gap-2.5 py-[15px] sm:py-5 bg-main rounded-[50px] mt-[40px] sm:mt-[60px]"
+              class="flex justify-center items-center gap-2.5 py-[15px] sm:py-5 bg-main rounded-[50px] mt-[40px] sm:mt-[60px] cursor-pointer"
+              id="searchButton"
             >
               <img
                 src="images/icons/search.png"
