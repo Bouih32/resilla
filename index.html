@@ -62,7 +62,23 @@
     <header
       class="px-[30px] sm:px-[100px] py-4 sm:py-[15px] text-[16px] font-medium"
     >
-      <nav class="flex items-center justify-between">
+      <nav class="flex items-center justify-between relative">
+        <div
+          class="sm:hidden absolute top-[100%] bg-main w-full rounded-b-[30px] transition-all hidden"
+          id="mobileNav"
+        >
+          <ul class="text-headers sm:flex items-center gap-4 text-white">
+            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Home</li>
+            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">About</li>
+            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">
+              Listings
+            </li>
+            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">
+              Services
+            </li>
+            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Blogs</li>
+          </ul>
+        </div>
         <ul class="hidden text-headers sm:flex items-center gap-4">
           <li
             class="px-4 py-[13px] bg-[#4361EE4D] rounded-[30px] cursor-pointer"
@@ -114,7 +130,12 @@
             <p>Add Listing</p>
           </div>
         </div>
-        <img src="images/icons/burger.png" alt="burger" class="sm:hidden" />
+        <img
+          src="images/icons/burger.png"
+          alt="burger"
+          class="sm:hidden"
+          id="burger"
+        />
       </nav>
     </header>
     <section
@@ -143,16 +164,31 @@
           <div
             class="sm:h-[340px] sm:w-[540px] h-[200px] w-[333px] rounded-[20px] relative shadow-scrollShadow"
           >
-            <img src="images/hero.png" alt="bed" class="w-full h-full" />
+            <img
+              src="images/hero.png"
+              alt="bed"
+              class="w-full h-full mt-[40px] sm:mt-0"
+              id="hero"
+            />
             <div
               class="flex justify-between absolute top-[50%] -translate-y-[50%] opacity-80 sm:w-[110%] w-full sm:-left-[30px]"
             >
               <div class="w-[40px] h-[40px] rounded-full bg-white">
-                <img src="images/arrowL.png" alt="arrow" />
+                <img
+                  src="images/arrowL.png"
+                  alt="arrow"
+                  id="leftArrow"
+                  class="cursor-pointer"
+                />
               </div>
 
               <div class="w-[40px] h-[40px] rounded-full bg-white">
-                <img src="images/arrowR.png" alt="arrow" />
+                <img
+                  src="images/arrowR.png"
+                  alt="arrow"
+                  id="rightArrow"
+                  class="cursor-pointer"
+                />
               </div>
             </div>
             <img
@@ -160,24 +196,31 @@
               alt="circle"
               class="absolute top-0 sm:right-0 right-10 -translate-y-[50%] translate-x-[50%] w-[40px] sm:w-[60px]"
             />
-            <div class="absolute -bottom-4 w-full flex justify-between">
+            <div
+              class="absolute -bottom-4 w-full flex justify-between"
+              id="sliders"
+            >
               <span
                 class="bg-secondary h-1 sm:w-[100px] w-[57.414px] rounded"
+                data-slide="0"
               ></span>
               <span
                 class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"
+                data-slide="1"
               ></span>
               <span
                 class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"
+                data-slide="2"
               ></span>
               <span
                 class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"
+                data-slide="3"
               ></span>
             </div>
           </div>
         </div>
         <form
-          class="sm:pt-[40px] sm:pb-[60px] pt-[29px] pb-[40px] sm:w-[420px] w-[333px] bg-white rounded-[30px] shadow-formShadow"
+          class="sm:pt-[40px] sm:pb-[60px] pt-[29px] pb-[40px] sm:w-[420px] w-[333px] bg-white rounded-[30px] shadow-formShadow mt-[50px] sm:mt-0"
         >
           <div
             class="flex justify-between border-b border-[#AAAAAA] text-[16px] font-medium text-main pb-[27px] sm:px-[82px] px-[68px]"
