@@ -51,6 +51,7 @@ rightArrow.addEventListener("click", () => {
 sliders.forEach((slider) => {
   slider.addEventListener("click", (e) => {
     hero.src = photos[e.target.dataset.slide];
+    i = Number(e.target.dataset.slide);
     sliders.forEach((slider) => {
       slider.classList.remove("bg-secondary");
       slider.classList.add("bg-white/50");
@@ -64,21 +65,19 @@ sliders.forEach((slider) => {
 
 function handleErrors() {
   if (formInput.value === "") {
-    formInput.classList.add("border");
-    formInput.classList.add("placeholder:text-red-700");
-    formInput.classList.add("border-red-700");
+    formInput.classList.add(
+      "border",
+      "placeholder:text-red-700",
+      "border-red-700"
+    );
   }
 
   if (firstSelect.selectedIndex === 0) {
-    firstSelect.classList.add("border");
-    firstSelect.classList.add("text-red-700");
-    firstSelect.classList.add("border-red-700");
+    firstSelect.classList.add("border", "text-red-700", "border-red-700");
   }
 
   if (secondSelect.selectedIndex === 0) {
-    secondSelect.classList.add("border");
-    secondSelect.classList.add("text-red-700");
-    secondSelect.classList.add("border-red-700");
+    secondSelect.classList.add("border", "text-red-700", "border-red-700");
   }
 }
 
