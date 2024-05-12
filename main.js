@@ -10,6 +10,10 @@ const firstSelect = document.querySelector("#firstSelect");
 const secondSelect = document.querySelector("#secondSelect");
 const formToggle = document.querySelectorAll("#formToggle p");
 const draggable = document.querySelector("#draggable");
+const draggableElements = document.querySelectorAll("#draggable section");
+const filterButtons = document.querySelectorAll("#filterButtons button");
+const sliders2 = document.querySelectorAll("#sliders2 span");
+const blogs = document.querySelectorAll(".blogs");
 
 function removeHighlight(slider) {
   slider.classList.remove("bg-secondary");
@@ -120,6 +124,28 @@ formToggle.forEach((ele) => {
   });
 });
 
+function filterHouses(textFilter) {
+  draggableElements.forEach((ele) => {
+    ele.style.display = "none";
+    if (ele.dataset.tab == textFilter) {
+      ele.style.display = "initial";
+    }
+
+    if (textFilter == "All") ele.style.display = "initial";
+  });
+}
+
+filterButtons.forEach((ele) => {
+  ele.addEventListener("click", (e) => {
+    filterHouses(ele.innerText);
+    filterButtons.forEach((ele) => {
+      ele.classList.remove("bg-main", "text-white");
+      if ((ele = e.target)) ele.classList.add("bg-main", "text-white");
+      ele.classList.add("text-main");
+    });
+  });
+});
+
 isDragging = false;
 let startPosition, scrollPosition;
 
@@ -137,3 +163,26 @@ function dragElements(e) {
 draggable.addEventListener("mousedown", startDragging);
 draggable.addEventListener("mousemove", dragElements);
 draggable.addEventListener("mouseup", () => (isDragging = false));
+
+function toggleBlogs(data) {
+  blogs.forEach((ele) => {
+    ele.classList.add("hidden"),
+      document.querySelector(data).classList.remove("hidden");
+  });
+}
+
+sliders2.forEach((ele) => {
+  ele.addEventListener("click", (e) => {
+    sliders2.forEach((ele) => {
+      ele.classList.remove("bg-white");
+      ele.classList.add("bg-white/50");
+      if (ele == e.target) {
+        ele.classList.add("bg-white");
+        ele.classList.remove("bg-white/50");
+      }
+    });
+    toggleBlogs(e.target.dataset.blog);
+  });
+});
+
+console.log(blogs);

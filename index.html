@@ -427,11 +427,16 @@
           dignissim purus.
         </p>
       </div>
-      <div class="flex gap-5 text-[16px] font-medium text-main">
+      <div
+        class="flex gap-5 text-[16px] font-medium text-main"
+        id="filterButtons"
+      >
         <button class="py-[19px] px-[30px] rounded-[30px] border border-main">
           All
         </button>
-        <button class="py-[19px] px-[30px] rounded-[30px] bg-main text-white">
+        <button
+          class="py-[19px] px-[30px] rounded-[30px] bg-main text-white border border-main"
+        >
           Sell
         </button>
         <button class="py-[19px] px-[30px] rounded-[30px] border border-main">
@@ -443,7 +448,7 @@
       class="sm:mt-[50px] mt-[40px] flex flex-col sm:flex-row sm:gap-[50px] gap-[34px] sm:pl-[160px] overflow-hidden items-center"
       id="draggable"
     >
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section class="sm:min-w-[340px] select-none cursor-grab" data-tab="Sell">
         <div class="relative">
           <img
             src="images/list1.png"
@@ -492,7 +497,7 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section class="sm:min-w-[340px] select-none cursor-grab" data-tab="Sell">
         <div class="relative">
           <img
             src="images/list2.png"
@@ -541,7 +546,7 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section class="sm:min-w-[340px] select-none cursor-grab" data-tab="Rent">
         <div class="relative">
           <img
             src="images/list3.png"
@@ -592,7 +597,7 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section class="sm:min-w-[340px] select-none cursor-grab" data-tab="Sell">
         <div class="relative">
           <img
             src="images/list1.png"
@@ -641,7 +646,10 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section
+        class="sm:min-w-[340px] select-none cursor-grab hidden sm:block"
+        data-tab="Rent"
+      >
         <div class="relative">
           <img
             src="images/list7.jpg"
@@ -692,7 +700,10 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section
+        class="sm:min-w-[340px] select-none cursor-grab hidden sm:block"
+        data-tab="Rent"
+      >
         <div class="relative">
           <img
             src="images/list8.jpg"
@@ -741,7 +752,10 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section
+        class="sm:min-w-[340px] select-none cursor-grab hidden sm:block"
+        data-tab="Sell"
+      >
         <div class="relative">
           <img
             src="images/list5.jpg"
@@ -790,7 +804,10 @@
           </div>
         </div>
       </section>
-      <section class="sm:min-w-[340px] select-none cursor-grab">
+      <section
+        class="sm:min-w-[340px] select-none cursor-grab hidden sm:block"
+        data-tab="Rent"
+      >
         <div class="relative">
           <img
             src="images/list6.jpg"
@@ -1148,6 +1165,7 @@
     </section>
     <section
       class="sm:mt-[180px] mt-[100px] bg-main sm:pt-[110px] sm:pb-[100px] py-[100px] flex flex-col items-center text-center"
+      id="blogs"
     >
       <div class="text-white">
         <span
@@ -1161,14 +1179,15 @@
         </h3>
       </div>
       <section
-        class="flex flex-col sm:flex-row sm:gap-[50px] gap-[40px] sm:mt-[80px] mt-[40px]"
+        class="flex flex-col sm:flex-row sm:gap-[50px] gap-[40px] sm:mt-[80px] mt-[40px] blogs"
+        id="firstBlog"
       >
         <section class="sm:w-[340px] w-[333px]">
           <div class="relative">
             <img
               src="images/blog1.png"
               alt="house"
-              class="sm:w-[340px] w-[333px]"
+              class="sm:w-[340px] w-[333px] sm:h-[240px] h-[200px]"
             />
             <div
               class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
@@ -1206,7 +1225,7 @@
             <img
               src="images/blog2.png"
               alt="house"
-              class="sm:w-[340px] w-[333px]"
+              class="sm:w-[340px] w-[333px] sm:h-[240px] h-[200px]"
             />
             <div
               class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
@@ -1245,7 +1264,7 @@
             <img
               src="images/blog3.png"
               alt="house"
-              class="sm:w-[340px] w-[333px]"
+              class="sm:w-[340px] w-[333px] sm:h-[240px] h-[200px]"
             />
             <div
               class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
@@ -1277,10 +1296,255 @@
           </div>
         </section>
       </section>
-      <div class="hidden sm:flex gap-[39px] mt-[70px]">
-        <span class="bg-white h-1 sm:w-[100px] w-[57.414px] rounded"></span>
-        <span class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"></span>
-        <span class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded"></span>
+      <section
+        class="flex flex-col sm:flex-row sm:gap-[50px] gap-[40px] sm:mt-[80px] mt-[40px] hidden blogs"
+        id="secondBlog"
+      >
+        <section class="sm:w-[340px] w-[333px]">
+          <div class="relative">
+            <img
+              src="images/blog4.jpg"
+              alt="house"
+              class="sm:w-[340px] w-[333px] rounded-[30px] sm:h-[240px] h-[200px]"
+            />
+            <div
+              class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
+            >
+              <span
+                class="sm:text-[19.4px] text-headers font-medium text-[16px]"
+                >18</span
+              >
+              <span
+                class="sm:text-[16px] text-paras text-[13.3px] leading-[22px]"
+                >Tue</span
+              >
+            </div>
+          </div>
+          <div class="text-start space-y-[20px] flex flex-col">
+            <p
+              class="sm:text-[27.6px] text-[19.4px] font-medium text-white mt-[20px]"
+            >
+              Top 10 Home Buying Mistakes to Avoid
+            </p>
+            <p
+              class="sm:text-[16px] text-[13.3px] text-[#D4D4D4] leading-[22px]"
+            >
+              Etiam eget elementum elit. Aenean dignissim dapibus vestibulum
+            </p>
+            <img
+              src="images/icons/arrR.png"
+              alt="arrow"
+              class="self-end hidden sm:block"
+            />
+          </div>
+        </section>
+        <section class="sm:w-[340px] w-[333px]">
+          <div class="relative">
+            <img
+              src="images/blog5.jpg"
+              alt="house"
+              class="sm:w-[340px] w-[333px] rounded-[30px] sm:h-[240px] h-[200px]"
+            />
+            <div
+              class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
+            >
+              <span
+                class="sm:text-[19.4px] text-headers font-medium text-[16px]"
+                >30</span
+              >
+              <span
+                class="sm:text-[16px] text-paras text-[13.3px] leading-[22px]"
+                >Mon</span
+              >
+            </div>
+          </div>
+          <div class="text-start space-y-[20px] flex flex-col">
+            <p
+              class="sm:text-[27.6px] text-[19.4px] font-medium text-white mt-[20px]"
+            >
+              How to Stage Your Home for a Quick Sale
+            </p>
+            <p
+              class="sm:text-[16px] text-[13.3px] text-[#D4D4D4] leading-[22px]"
+            >
+              Nullam odio lacus, dictum quis pretium congue, vehicula venenatis
+              nunc.
+            </p>
+            <img
+              src="images/icons/arrR.png"
+              alt="arrow"
+              class="self-end hidden sm:block"
+            />
+          </div>
+        </section>
+        <section class="sm:w-[340px] w-[333px]">
+          <div class="relative">
+            <img
+              src="images/blog6.jpg"
+              alt="house"
+              class="sm:w-[340px] w-[333px] rounded-[30px] sm:h-[240px] h-[200px]"
+            />
+            <div
+              class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
+            >
+              <span
+                class="sm:text-[19.4px] text-headers font-medium text-[16px]"
+                >26</span
+              >
+              <span class="sm:text-[16px] text-paras">Wed</span>
+            </div>
+          </div>
+          <div class="text-start space-y-[20px] flex flex-col">
+            <p
+              class="sm:text-[27.6px] text-[19.4px] font-medium text-white mt-[20px]"
+            >
+              5 Tips for First-Time Home Sellers
+            </p>
+            <p
+              class="sm:text-[16px] text-[13.3px] text-[#D4D4D4] leading-[22px]"
+            >
+              In hac habitasse platea dictumst. Phasellus vel velit vel augue
+              maximus.
+            </p>
+            <img
+              src="images/icons/arrR.png"
+              alt="arrow"
+              class="self-end hidden sm:block"
+            />
+          </div>
+        </section>
+      </section>
+      <section
+        class="flex flex-col sm:flex-row sm:gap-[50px] gap-[40px] sm:mt-[80px] mt-[40px] hidden blogs"
+        id="thirdBlog"
+      >
+        <section class="sm:w-[340px] w-[333px]">
+          <div class="relative">
+            <img
+              src="images/blog7.png"
+              alt="house"
+              class="sm:w-[340px] w-[333px] rounded-[30px] sm:h-[240px] h-[200px]"
+            />
+            <div
+              class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
+            >
+              <span
+                class="sm:text-[19.4px] text-headers font-medium text-[16px]"
+                >22</span
+              >
+              <span
+                class="sm:text-[16px] text-paras text-[13.3px] leading-[22px]"
+                >Fri</span
+              >
+            </div>
+          </div>
+          <div class="text-start space-y-[20px] flex flex-col">
+            <p
+              class="sm:text-[27.6px] text-[19.4px] font-medium text-white mt-[20px]"
+            >
+              Top 10 Home Buying Mistakes to Avoid
+            </p>
+            <p
+              class="sm:text-[16px] text-[13.3px] text-[#D4D4D4] leading-[22px]"
+            >
+              Etiam eget elementum elit. Aenean dignissim dapibus vestibulum
+            </p>
+            <img
+              src="images/icons/arrR.png"
+              alt="arrow"
+              class="self-end hidden sm:block"
+            />
+          </div>
+        </section>
+        <section class="sm:w-[340px] w-[333px]">
+          <div class="relative">
+            <img
+              src="images/blog8.jpg"
+              alt="house"
+              class="sm:w-[340px] w-[333px] rounded-[30px] sm:h-[240px] h-[200px]"
+            />
+            <div
+              class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
+            >
+              <span
+                class="sm:text-[19.4px] text-headers font-medium text-[16px]"
+                >12</span
+              >
+              <span
+                class="sm:text-[16px] text-paras text-[13.3px] leading-[22px]"
+                >Sun</span
+              >
+            </div>
+          </div>
+          <div class="text-start space-y-[20px] flex flex-col">
+            <p
+              class="sm:text-[27.6px] text-[19.4px] font-medium text-white mt-[20px]"
+            >
+              How to Stage Your Home for a Quick Sale
+            </p>
+            <p
+              class="sm:text-[16px] text-[13.3px] text-[#D4D4D4] leading-[22px]"
+            >
+              Nullam odio lacus, dictum quis pretium congue, vehicula venenatis
+              nunc.
+            </p>
+            <img
+              src="images/icons/arrR.png"
+              alt="arrow"
+              class="self-end hidden sm:block"
+            />
+          </div>
+        </section>
+        <section class="sm:w-[340px] w-[333px]">
+          <div class="relative">
+            <img
+              src="images/blog9.jpg"
+              alt="house"
+              class="sm:w-[340px] w-[333px] rounded-[30px] sm:h-[240px] h-[200px]"
+            />
+            <div
+              class="absolute top-0 p-2.5 rounded-b-[10px] shadow-blogShadow bg-white flex flex-col left-[30px]"
+            >
+              <span
+                class="sm:text-[19.4px] text-headers font-medium text-[16px]"
+                >02</span
+              >
+              <span class="sm:text-[16px] text-paras">Sat</span>
+            </div>
+          </div>
+          <div class="text-start space-y-[20px] flex flex-col">
+            <p
+              class="sm:text-[27.6px] text-[19.4px] font-medium text-white mt-[20px]"
+            >
+              5 Tips for First-Time Home Sellers
+            </p>
+            <p
+              class="sm:text-[16px] text-[13.3px] text-[#D4D4D4] leading-[22px]"
+            >
+              In hac habitasse platea dictumst. Phasellus vel velit vel augue
+              maximus.
+            </p>
+            <img
+              src="images/icons/arrR.png"
+              alt="arrow"
+              class="self-end hidden sm:block"
+            />
+          </div>
+        </section>
+      </section>
+      <div class="hidden sm:flex gap-[39px] mt-[70px]" id="sliders2">
+        <span
+          class="bg-white h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
+          data-blog="#firstBlog"
+        ></span>
+        <span
+          class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
+          data-blog="#secondBlog"
+        ></span>
+        <span
+          class="bg-white/50 h-1 sm:w-[100px] w-[57.414px] rounded cursor-pointer"
+          data-blog="#thirdBlog"
+        ></span>
       </div>
       <p
         class="sm:hidden py-[19px] px-[30px] bg-white rounded-[30px] w-fit text-main text-[16px] font-medium mx-auto mt-[60px]"
