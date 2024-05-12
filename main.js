@@ -8,6 +8,17 @@ const searchButton = document.querySelector("#searchButton");
 const formInput = document.querySelector("#formInput");
 const firstSelect = document.querySelector("#firstSelect");
 const secondSelect = document.querySelector("#secondSelect");
+const formToggle = document.querySelectorAll("#formToggle p");
+
+function removeHighlight(slider) {
+  slider.classList.remove("bg-secondary");
+  slider.classList.add("bg-white/50");
+}
+
+function addHighlight(slider) {
+  slider.classList.remove("bg-white/50");
+  slider.classList.add("bg-secondary");
+}
 
 burger.addEventListener("click", () => {
   mobileNav.classList.toggle("hidden");
@@ -26,11 +37,9 @@ leftArrow.addEventListener("click", () => {
   i == 0 ? (i = 3) : i--;
   hero.src = photos[i];
   sliders.forEach((slider) => {
-    slider.classList.remove("bg-secondary");
-    slider.classList.add("bg-white/50");
+    removeHighlight(slider);
     if (Number(slider.dataset.slide) === i) {
-      slider.classList.remove("bg-white/50");
-      slider.classList.add("bg-secondary");
+      addHighlight(slider);
     }
   });
 });
@@ -39,11 +48,9 @@ rightArrow.addEventListener("click", () => {
   i == 3 ? (i = 0) : i++;
   hero.src = photos[i];
   sliders.forEach((slider) => {
-    slider.classList.remove("bg-secondary");
-    slider.classList.add("bg-white/50");
+    removeHighlight(slider);
     if (Number(slider.dataset.slide) === i) {
-      slider.classList.remove("bg-white/50");
-      slider.classList.add("bg-secondary");
+      addHighlight(slider);
     }
   });
 });
@@ -53,11 +60,9 @@ sliders.forEach((slider) => {
     hero.src = photos[e.target.dataset.slide];
     i = Number(e.target.dataset.slide);
     sliders.forEach((slider) => {
-      slider.classList.remove("bg-secondary");
-      slider.classList.add("bg-white/50");
+      removeHighlight(slider);
       if (slider === e.target) {
-        slider.classList.remove("bg-white/50");
-        slider.classList.add("bg-secondary");
+        addHighlight(slider);
       }
     });
   });
@@ -83,4 +88,33 @@ function handleErrors() {
 
 searchButton.addEventListener("click", () => {
   handleErrors();
+});
+
+formToggle.forEach((ele) => {
+  ele.addEventListener("click", (e) => {
+    formToggle.forEach((ele) => {
+      ele.classList.remove(
+        "before:bg-main",
+        "before:-translate-x-[25%]",
+        "sm:before:w-[150px]",
+        "before:w-[100px]",
+        "before:h-[3px]",
+        "relative",
+        "before:absolute",
+        "before:-bottom-[29px]"
+      );
+    });
+
+    if (ele == e.target)
+      ele.classList.add(
+        "before:bg-main",
+        "before:-translate-x-[25%]",
+        "sm:before:w-[150px]",
+        "before:w-[100px]",
+        "before:h-[3px]",
+        "relative",
+        "before:absolute",
+        "before:-bottom-[29px]"
+      );
+  });
 });
