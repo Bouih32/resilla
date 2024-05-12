@@ -9,6 +9,7 @@ const formInput = document.querySelector("#formInput");
 const firstSelect = document.querySelector("#firstSelect");
 const secondSelect = document.querySelector("#secondSelect");
 const formToggle = document.querySelectorAll("#formToggle p");
+const draggable = document.querySelector("#draggable");
 
 function removeHighlight(slider) {
   slider.classList.remove("bg-secondary");
@@ -118,3 +119,21 @@ formToggle.forEach((ele) => {
       );
   });
 });
+
+isDragging = false;
+let startPosition, scrollPosition;
+
+function startDragging(e) {
+  isDragging = true;
+  startPosition = e.pageX;
+  scrollPosition = draggable.scrollLeft;
+}
+
+function dragElements(e) {
+  if (!isDragging) return;
+  draggable.scrollLeft = scrollPosition - (e.pageX - startPosition);
+}
+
+draggable.addEventListener("mousedown", startDragging);
+draggable.addEventListener("mousemove", dragElements);
+draggable.addEventListener("mouseup", () => (isDragging = false));
