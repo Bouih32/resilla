@@ -140,8 +140,8 @@ filterButtons.forEach((ele) => {
     filterHouses(ele.innerText);
     filterButtons.forEach((ele) => {
       ele.classList.remove("bg-main", "text-white");
-      if ((ele = e.target)) ele.classList.add("bg-main", "text-white");
       ele.classList.add("text-main");
+      if ((ele = e.target)) ele.classList.add("bg-main", "text-white");
     });
   });
 });
@@ -184,5 +184,3 @@ sliders2.forEach((ele) => {
     toggleBlogs(e.target.dataset.blog);
   });
 });
-
-console.log(blogs);
