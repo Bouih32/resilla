@@ -61,7 +61,7 @@
       </div>
     </section>
     <header
-      class="px-[30px] sm:px-[100px] py-4 sm:py-[15px] text-[16px] font-medium"
+      class="px-[30px] sm:px-[100px] py-4 sm:py-[15px] text-[16px] font-medium noAnimation delay-300"
     >
       <nav class="flex items-center justify-between relative">
         <div
@@ -140,7 +140,7 @@
       </nav>
     </header>
     <section
-      class="bg-grad rounded-b-[800px] sm:h-[902px] h-[894px] flex flex-col gap-[60px] items-center mb-[200px] sm:mb-0"
+      class="bg-grad rounded-b-[800px] sm:h-[902px] h-[894px] flex flex-col gap-[60px] items-center mb-[200px] sm:mb-0 delay-700 noAnimation"
     >
       <section
         class="flex flex-col sm:flex-row items-center sm:justify-center sm:gap-[125px] gap-[40px] sm:pt-[75px] pt-[34px]"
@@ -235,58 +235,66 @@
             <p class="cursor-pointer">For Rent</p>
           </div>
           <section class="sm:px-[40px] px-[22px] sm:pt-[50px] pt-[40px]">
-            <div
-              class="flex flex-col sm:space-y-[30px] space-y-5 sm:mb-5 mb-[15px]"
-            >
-              <input
-                type="text"
-                id="formInput"
-                placeholder="New York, San Francisco, etc"
-                class="rounded-[20px] bg-[#D4D4D433] placeholder:text-[#AAAAAA] sm:py-6 py-5 sm:pl-5 pl-[18px] focus:outline-none"
-              />
-              <select
-                id="firstSelect"
-                class="text-[#AAAAAA] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none sm:focus:w-[100%] focus:w-[75%]"
+            <div id="formInfo">
+              <div
+                class="flex flex-col sm:space-y-[30px] space-y-5 sm:mb-5 mb-[15px]"
               >
-                <option>Select Property Type</option>
-                <option>First option</option>
-                <option>Second option</option>
-                <option>Third option</option>
-              </select>
-              <select
-                id="secondSelect"
-                class="text-[#AAAAAA] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none sm:focus:w-[100%] focus:w-[75%]"
+                <input
+                  type="text"
+                  id="formInput"
+                  placeholder="New York, San Francisco, etc"
+                  class="rounded-[20px] bg-[#D4D4D433] placeholder:text-[#AAAAAA] sm:py-6 py-5 sm:pl-5 pl-[18px] focus:outline-none"
+                />
+                <select
+                  id="firstSelect"
+                  class="text-[#AAAAAA] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none sm:focus:w-[100%] focus:w-[75%]"
+                >
+                  <option>Select Property Type</option>
+                  <option>First option</option>
+                  <option>Second option</option>
+                  <option>Third option</option>
+                </select>
+                <select
+                  id="secondSelect"
+                  class="text-[#AAAAAA] rounded-[20px] bg-[#D4D4D433] sm:py-6 py-5 sm:px-5 px-[18px] appearance-none focus:outline-none sm:focus:w-[100%] focus:w-[75%]"
+                >
+                  <option>Select Rooms</option>
+                  <option>First option</option>
+                  <option>Second option</option>
+                  <option>Third option</option>
+                </select>
+              </div>
+              <div class="flex gap-2.5 items-center">
+                <img
+                  src="images/icons/params.png"
+                  alt="param"
+                  class="w-[14px] h-[14px]"
+                />
+                <p class="text-[13.3px] text-main">Advance Search</p>
+              </div>
+              <div
+                class="flex justify-center items-center gap-2.5 py-[15px] sm:py-5 bg-main rounded-[50px] mt-[40px] sm:mt-[60px] cursor-pointer"
+                id="searchButton"
               >
-                <option>Select Rooms</option>
-                <option>First option</option>
-                <option>Second option</option>
-                <option>Third option</option>
-              </select>
-            </div>
-            <div class="flex gap-2.5 items-center">
-              <img
-                src="images/icons/params.png"
-                alt="param"
-                class="w-[14px] h-[14px]"
-              />
-              <p class="text-[13.3px] text-main">Advance Search</p>
+                <img
+                  src="images/icons/search.png"
+                  alt="search"
+                  class="w-[20px] h-[20px]"
+                />
+                <p class="text-[16px] font-medium text-white">Search</p>
+              </div>
             </div>
             <div
-              class="flex justify-center items-center gap-2.5 py-[15px] sm:py-5 bg-main rounded-[50px] mt-[40px] sm:mt-[60px] cursor-pointer"
-              id="searchButton"
+              class="hidden sm:h-[440px] h-[250px] flex justify-center items-center"
+              id="success"
             >
-              <img
-                src="images/icons/search.png"
-                alt="search"
-                class="w-[20px] h-[20px]"
-              />
-              <p class="text-[16px] font-medium text-white">Search</p>
+              <img src="images/success.gif" alt="success" />
             </div>
           </section>
         </form>
       </section>
       <section
-        class="hidden text-[#2B2B2B] text-[19.4px] font-medium sm:flex gap-[30px]"
+        class="hidden text-[#2B2B2B] text-[19.4px] font-medium sm:flex gap-[30px] noAnimation"
       >
         <div
           class="py-7 px-[36px] bg-white rounded-[50px] flex gap-2.5 items-center shadow-formShadow"
@@ -309,7 +317,7 @@
         </div>
       </section>
     </section>
-    <section class="sm:mt-[118px] overflow-hidden text-center">
+    <section class="sm:mt-[118px] overflow-hidden text-center noAnimation">
       <p
         class="text-[16px] mt-[70px] sm:mt-0 font-medium text-paras sm:mb-[60px] mb-[40px] w-[226px] sm:w-full mx-auto"
       >
@@ -325,7 +333,7 @@
       </div>
     </section>
     <section
-      class="sm:hidden text-[#2B2B2B] text-[16px] font-medium flex flex-col gap-[28px] mt-[50px] items-center"
+      class="sm:hidden text-[#2B2B2B] text-[16px] font-medium flex flex-col gap-[28px] mt-[50px] items-center noAnimation"
     >
       <div
         class="py-[26px] px-[23px] bg-white rounded-[50px] flex gap-2.5 items-center shadow-formShadow w-[333px]"
@@ -344,7 +352,7 @@
       </div>
     </section>
     <section
-      class="sm:mt-[193px] mt-[100px] flex flex-col sm:flex-row justify-center gap-[43px] items-center"
+      class="sm:mt-[193px] mt-[100px] flex flex-col sm:flex-row justify-center gap-[43px] items-center noAnimation"
     >
       <section>
         <div class="w-fit mx-auto">
@@ -409,7 +417,7 @@
       <img src="images/who.png" alt="houses" class="w-[333px] sm:w-[577px]" />
     </section>
     <section
-      class="sm:mt-[200px] mt-[100px] flex flex-col sm:flex-row justify-center items-center sm:gap-[349px] gap-[40px]"
+      class="sm:mt-[200px] mt-[100px] flex flex-col sm:flex-row justify-center items-center sm:gap-[349px] gap-[40px] noAnimation"
     >
       <div class="sm:w-[473px] w-[323px]">
         <span
@@ -446,7 +454,7 @@
       </div>
     </section>
     <section
-      class="sm:mt-[50px] mt-[40px] flex flex-col sm:flex-row sm:gap-[50px] gap-[34px] sm:pl-[160px] overflow-hidden items-center"
+      class="sm:mt-[50px] mt-[40px] flex flex-col sm:flex-row sm:gap-[50px] gap-[34px] sm:pl-[160px] overflow-hidden items-center noAnimation"
       id="draggable"
     >
       <section class="sm:min-w-[340px] select-none cursor-grab" data-tab="Sell">
@@ -859,12 +867,12 @@
       </section>
     </section>
     <p
-      class="sm:hidden py-[19px] px-[30px] rounded-[30px] border border-main w-fit text-main text-[16px] font-medium mx-auto mt-[60px]"
+      class="sm:hidden py-[19px] px-[30px] rounded-[30px] border border-main w-fit text-main text-[16px] font-medium mx-auto mt-[60px] noAnimation"
     >
       View more properties
     </p>
     <section
-      class="mt-[100px] sm:mt-[200px] bg-[#D4D4D4]/30 pt-[100px] text-center pb-[100px] sm:pb-[137px]"
+      class="mt-[100px] sm:mt-[200px] bg-[#D4D4D4]/30 pt-[100px] text-center pb-[100px] sm:pb-[137px] noAnimation"
     >
       <p class="sm:mb-[30px] mb-[10px]">OUR SERVICES</p>
       <h3
@@ -954,7 +962,7 @@
       alt="circle"
       class="sm:mx-auto sm:mt-[60px] sm:relative absolute right-[25%] sm:right-0 -translate-y-[30%] sm:translate-y-0"
     />
-    <section class="sm:mt-[80px] mt-[100px]">
+    <section class="sm:mt-[80px] mt-[100px] noAnimation">
       <div class="sm:pl-[160px] pl-[30px]">
         <span
           class="text-secondary sm:text-[19.4px] text-[16px] font-medium tracking-[2.91px] leading-[47px]"
@@ -1078,7 +1086,7 @@
     />
 
     <section
-      class="sm:mt-[210px] mt-[100px] flex flex-col items-center text-center"
+      class="sm:mt-[210px] mt-[100px] flex flex-col items-center text-center noAnimation"
     >
       <div>
         <span
@@ -1165,7 +1173,7 @@
       </section>
     </section>
     <section
-      class="sm:mt-[180px] mt-[100px] bg-main sm:pt-[110px] sm:pb-[100px] py-[100px] flex flex-col items-center text-center"
+      class="sm:mt-[180px] mt-[100px] bg-main sm:pt-[110px] sm:pb-[100px] py-[100px] flex flex-col items-center text-center noAnimation"
       id="blogs"
     >
       <div class="text-white">
@@ -1554,7 +1562,7 @@
       </p>
     </section>
     <section
-      class="sm:mt-[180px] mt-[100px] flex justify-center flex-col sm:flex-row sm:gap-[195px] gap-[30px] items-center"
+      class="sm:mt-[180px] mt-[100px] flex justify-center flex-col sm:flex-row sm:gap-[195px] gap-[30px] items-center noAnimation"
     >
       <div class="sm:w-[473px] w-[323px]">
         <span
@@ -1648,7 +1656,7 @@
           </div>
         </div>
         <div
-          class="flex flex-col absolute gap-[10px] sm:-right-[30px] right-[50%] sm:top-[50%] top-[110%] -translate-y-[50%] rotate-90 sm:rotate-0"
+          class="flex flex-col absolute gap-[10px] sm:-right-[30px] right-[50%] sm:top-[50%] top-[110%] -translate-y-[50%] rotate-90 sm:rotate-0 z-10"
           id="sliders3"
         >
           <span
@@ -1666,7 +1674,7 @@
         </div>
       </section>
     </section>
-    <section class="sm:mt-[250px] mt-[100px]">
+    <section class="sm:mt-[250px] mt-[100px] noAnimation">
       <section
         class="relative bg-main w-[333px] mx-auto rounded-[40px] flex flex-col-reverse sm:flex-row sm:h-[260px] sm:w-[1200px] sm:gap-[40px] px-[30px] pt-[100px] sm:pt-0"
       >
@@ -1715,7 +1723,7 @@
       </section>
     </section>
     <footer
-      class="sm:mt-[180px] mt-[100px] bg-[#4361EE]/10 text-headers text-[16px] sm:py-[100px] py-[60px] flex flex-col sm:flex-row sm:justify-between items-center sm:items-start sm:px-[160px]"
+      class="sm:mt-[180px] mt-[100px] bg-[#4361EE]/10 text-headers text-[16px] sm:py-[100px] py-[60px] flex flex-col sm:flex-row sm:justify-between items-center sm:items-start sm:px-[160px] noAnimation"
     >
       <div
         class="font-medium flex flex-col items-center sm:items-start text-center sm:text-start sm:w-[188px]"

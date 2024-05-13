@@ -18,6 +18,9 @@ const sliders3 = document.querySelectorAll("#sliders3 span");
 const reviewSection = document.querySelectorAll(".reviewSection");
 const reviewLeftArrow = document.querySelector("#reviewLeftArrow");
 const reviewRightArrow = document.querySelector("#reviewRightArrow");
+const formInfo = document.querySelector("#formInfo");
+const success = document.querySelector("#success");
+const noAnimation = document.querySelectorAll(".noAnimation");
 
 function changeSliderColor(i) {
   hero.src = photos[i];
@@ -74,14 +77,8 @@ rightArrow.addEventListener("click", () => {
 
 sliders.forEach((slider) => {
   slider.addEventListener("click", (e) => {
-    hero.src = photos[e.target.dataset.slide];
     i = Number(e.target.dataset.slide);
-    sliders.forEach((slider) => {
-      removeHighlight(slider);
-      if (slider === e.target) {
-        addHighlight(slider);
-      }
-    });
+    changeSliderColor(i);
   });
 });
 
@@ -104,11 +101,24 @@ function handleErrors() {
 }
 
 searchButton.addEventListener("click", () => {
-  handleErrors();
+  if (
+    formInput.value === "" ||
+    firstSelect.selectedIndex === 0 ||
+    secondSelect.selectedIndex === 0
+  ) {
+    handleErrors();
+    return;
+  }
+
+  formInfo.style.display = "none";
+  success.classList.remove("hidden");
+  success.classList.add("animateToTop");
 });
 
 formToggle.forEach((ele) => {
   ele.addEventListener("click", (e) => {
+    formInfo.style.display = "block";
+    success.classList.add("hidden");
     formToggle.forEach((ele) => {
       ele.classList.remove(
         "before:bg-main",
@@ -254,3 +264,14 @@ reviewRightArrow.addEventListener("click", () => {
   toggleReview(i2);
   animateToRight(reviewToShow);
 });
+
+console.log(noAnimation);
+const observer = new IntersectionObserver((sect) => {
+  sect.forEach((ele) => {
+    if (ele.isIntersecting) {
+      ele.target.classList.add("animateScroll");
+    }
+  });
+});
+
+noAnimation.forEach((ele) => observer.observe(ele));

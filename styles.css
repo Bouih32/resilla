@@ -20,10 +20,38 @@
   }
 }
 
+@keyframes animateTop {
+  0% {
+    transform: translateY(25px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 .animateToRight {
   animation: animateLeft linear 0.25s;
 }
 
 .animateToLeft {
   animation: animateRight linear 0.25s;
+}
+
+.animateToTop {
+  animation: animateTop linear 0.1s;
+}
+
+.noAnimation {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+  transform: translateY(50px);
+}
+
+.animateScroll {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
 }
