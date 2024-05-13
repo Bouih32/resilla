@@ -1,0 +1,29 @@
+@keyframes animateRight {
+  0% {
+    transform: translateX(-25px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animateLeft {
+  0% {
+    transform: translateX(25px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.animateToRight {
+  animation: animateLeft linear 0.25s;
+}
+
+.animateToLeft {
+  animation: animateRight linear 0.25s;
+}

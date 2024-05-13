@@ -25,6 +25,22 @@ function addHighlight(slider) {
   slider.classList.add("bg-secondary");
 }
 
+function animateToRight() {
+  hero.classList.remove("animateToLeft");
+  hero.classList.add("animateToRight");
+  setTimeout(() => {
+    hero.classList.remove("animateToRight");
+  }, 300);
+}
+
+function animateToLeft() {
+  hero.classList.remove("animateToRight");
+  hero.classList.add("animateToLeft");
+  setTimeout(() => {
+    hero.classList.remove("animateToLeft");
+  }, 300);
+}
+
 burger.addEventListener("click", () => {
   mobileNav.classList.toggle("hidden");
 });
@@ -41,6 +57,7 @@ let i = 0;
 leftArrow.addEventListener("click", () => {
   i == 0 ? (i = 3) : i--;
   hero.src = photos[i];
+  animateToLeft();
   sliders.forEach((slider) => {
     removeHighlight(slider);
     if (Number(slider.dataset.slide) === i) {
@@ -52,6 +69,8 @@ leftArrow.addEventListener("click", () => {
 rightArrow.addEventListener("click", () => {
   i == 3 ? (i = 0) : i++;
   hero.src = photos[i];
+  animateToRight();
+
   sliders.forEach((slider) => {
     removeHighlight(slider);
     if (Number(slider.dataset.slide) === i) {
