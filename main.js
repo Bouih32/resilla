@@ -19,14 +19,16 @@ const reviewSection = document.querySelectorAll(".reviewSection");
 const reviewLeftArrow = document.querySelector("#reviewLeftArrow");
 const reviewRightArrow = document.querySelector("#reviewRightArrow");
 
-function removeHighlight(slider) {
-  slider.classList.remove("bg-secondary");
-  slider.classList.add("bg-white/50");
-}
-
-function addHighlight(slider) {
-  slider.classList.remove("bg-white/50");
-  slider.classList.add("bg-secondary");
+function changeSliderColor(i) {
+  hero.src = photos[i];
+  sliders.forEach((slider) => {
+    slider.classList.remove("bg-secondary");
+    slider.classList.add("bg-white/50");
+    if (Number(slider.dataset.slide) === i) {
+      slider.classList.remove("bg-white/50");
+      slider.classList.add("bg-secondary");
+    }
+  });
 }
 
 function animateToRight(ele) {
@@ -60,27 +62,14 @@ let i = 0;
 
 leftArrow.addEventListener("click", () => {
   i == 0 ? (i = 3) : i--;
-  hero.src = photos[i];
   animateToLeft(hero);
-  sliders.forEach((slider) => {
-    removeHighlight(slider);
-    if (Number(slider.dataset.slide) === i) {
-      addHighlight(slider);
-    }
-  });
+  changeSliderColor(i);
 });
 
 rightArrow.addEventListener("click", () => {
   i == 3 ? (i = 0) : i++;
-  hero.src = photos[i];
   animateToRight(hero);
-
-  sliders.forEach((slider) => {
-    removeHighlight(slider);
-    if (Number(slider.dataset.slide) === i) {
-      addHighlight(slider);
-    }
-  });
+  changeSliderColor(i);
 });
 
 sliders.forEach((slider) => {
