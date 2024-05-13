@@ -1573,8 +1573,18 @@
           pulvinar est pellentesque.
         </p>
         <div class="hidden sm:flex gap-[50px] mt-[60px]">
-          <img src="images/icons/ArrowLeft.png" alt="arrow" />
-          <img src="images/icons/arrowRight.png" alt="arrow" />
+          <img
+            src="images/icons/ArrowLeft.png"
+            alt="arrow"
+            id="reviewLeftArrow"
+            class="cursor-pointer"
+          />
+          <img
+            src="images/icons/arrowRight.png"
+            alt="arrow"
+            id="reviewRightArrow"
+            class="cursor-pointer"
+          />
         </div>
       </div>
 
@@ -1587,24 +1597,72 @@
           class="absolute -top-5 sm:-left-5 left-[60%] opacity-50"
         />
         <img src="images/icons/quats.png" alt="qouat" />
-        <p class="pb-[30px] sm:pb-[40px] border-b border-[#D4D4D4] mt-[19px]">
-          I highly recommend Jodi J. Appleby. She was attentive to our needs and
-          worked tirelessly to find us the perfect home. We couldn't be happier
-          with our new place!
-        </p>
-        <div class="flex justify-between items-center mt-[20px]">
-          <div class="flex gap-[15px] items-center">
-            <img src="images/icons/barbra.png" alt="barbra" />
-            <p>Barbara D. Smith</p>
+        <div class="reviewSection">
+          <p class="pb-[30px] sm:pb-[40px] border-b border-[#D4D4D4] mt-[19px]">
+            I highly recommend Jodi J. Appleby. She was attentive to our needs
+            and worked tirelessly to find us the perfect home. We couldn't be
+            happier with our new place!
+          </p>
+          <div class="flex justify-between items-center mt-[20px]">
+            <div class="flex gap-[15px] items-center">
+              <img src="images/icons/barbra.png" alt="barbra" />
+              <p>Barbara D. Smith</p>
+            </div>
+            <img src="images/icons/stars.png" alt="starrs" />
           </div>
-          <img src="images/icons/stars.png" alt="starrs" />
+        </div>
+        <div class="reviewSection hidden">
+          <p class="pb-[30px] sm:pb-[40px] border-b border-[#D4D4D4] mt-[19px]">
+            I highly recommend Emily K. Roberts. She was attentive to our needs
+            and worked tirelessly to find us the perfect home. We couldn't be
+            happier with our new place!
+          </p>
+          <div class="flex justify-between items-center mt-[20px]">
+            <div class="flex gap-[15px] items-center">
+              <img
+                src="images/review1.jpg"
+                alt="barbra"
+                class="w-[50px] h-[50px] rounded-full"
+              />
+              <p>Emily K. Roberts</p>
+            </div>
+            <img src="images/icons/stars.png" alt="starrs" />
+          </div>
+        </div>
+        <div class="reviewSection hidden">
+          <p class="pb-[30px] sm:pb-[40px] border-b border-[#D4D4D4] mt-[19px]">
+            I highly recommend Michael S. Thompson. He was attentive to our
+            needs and worked tirelessly to find us the perfect home. We couldn't
+            be happier with our new place!
+          </p>
+          <div class="flex justify-between items-center mt-[20px]">
+            <div class="flex gap-[15px] items-center">
+              <img
+                src="images/review2.jpg"
+                alt="barbra"
+                class="w-[50px] h-[50px] rounded-full"
+              />
+              <p>Michael S. Thompson</p>
+            </div>
+            <img src="images/icons/stars.png" alt="starrs" />
+          </div>
         </div>
         <div
           class="flex flex-col absolute gap-[10px] sm:-right-[30px] right-[50%] sm:top-[50%] top-[110%] -translate-y-[50%] rotate-90 sm:rotate-0"
+          id="sliders3"
         >
-          <span class="bg-[#808080] w-1 h-[50px] rounded"></span>
-          <span class="bg-[#AAAAAA] w-1 h-[50px] rounded"></span>
-          <span class="bg-[#AAAAAA] w-1 h-[50px] rounded"></span>
+          <span
+            class="bg-[#808080] w-1 h-[50px] rounded cursor-pointer"
+            data-review="0"
+          ></span>
+          <span
+            class="bg-[#AAAAAA] w-1 h-[50px] rounded cursor-pointer"
+            data-review="1"
+          ></span>
+          <span
+            class="bg-[#AAAAAA] w-1 h-[50px] rounded cursor-pointer"
+            data-review="2"
+          ></span>
         </div>
       </section>
     </section>

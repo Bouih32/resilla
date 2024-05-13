@@ -14,6 +14,10 @@ const draggableElements = document.querySelectorAll("#draggable section");
 const filterButtons = document.querySelectorAll("#filterButtons button");
 const sliders2 = document.querySelectorAll("#sliders2 span");
 const blogs = document.querySelectorAll(".blogs");
+const sliders3 = document.querySelectorAll("#sliders3 span");
+const reviewSection = document.querySelectorAll(".reviewSection");
+const reviewLeftArrow = document.querySelector("#reviewLeftArrow");
+const reviewRightArrow = document.querySelector("#reviewRightArrow");
 
 function removeHighlight(slider) {
   slider.classList.remove("bg-secondary");
@@ -25,19 +29,19 @@ function addHighlight(slider) {
   slider.classList.add("bg-secondary");
 }
 
-function animateToRight() {
-  hero.classList.remove("animateToLeft");
-  hero.classList.add("animateToRight");
+function animateToRight(ele) {
+  ele.classList.remove("animateToLeft");
+  ele.classList.add("animateToRight");
   setTimeout(() => {
-    hero.classList.remove("animateToRight");
+    ele.classList.remove("animateToRight");
   }, 300);
 }
 
-function animateToLeft() {
-  hero.classList.remove("animateToRight");
-  hero.classList.add("animateToLeft");
+function animateToLeft(ele) {
+  ele.classList.remove("animateToRight");
+  ele.classList.add("animateToLeft");
   setTimeout(() => {
-    hero.classList.remove("animateToLeft");
+    ele.classList.remove("animateToLeft");
   }, 300);
 }
 
@@ -57,7 +61,7 @@ let i = 0;
 leftArrow.addEventListener("click", () => {
   i == 0 ? (i = 3) : i--;
   hero.src = photos[i];
-  animateToLeft();
+  animateToLeft(hero);
   sliders.forEach((slider) => {
     removeHighlight(slider);
     if (Number(slider.dataset.slide) === i) {
@@ -69,7 +73,7 @@ leftArrow.addEventListener("click", () => {
 rightArrow.addEventListener("click", () => {
   i == 3 ? (i = 0) : i++;
   hero.src = photos[i];
-  animateToRight();
+  animateToRight(hero);
 
   sliders.forEach((slider) => {
     removeHighlight(slider);
@@ -185,8 +189,10 @@ draggable.addEventListener("mouseup", () => (isDragging = false));
 
 function toggleBlogs(data) {
   blogs.forEach((ele) => {
-    ele.classList.add("hidden"),
-      document.querySelector(data).classList.remove("hidden");
+    ele.classList.add("hidden");
+    const elementToShow = document.querySelector(data);
+    elementToShow.classList.remove("hidden");
+    animateToRight(elementToShow);
   });
 }
 
@@ -202,4 +208,60 @@ sliders2.forEach((ele) => {
     });
     toggleBlogs(e.target.dataset.blog);
   });
+});
+
+let reviewsArr = Array.from(reviewSection);
+
+let i2 = 0;
+sliders3.forEach((ele) => {
+  ele.addEventListener("click", (e) => {
+    sliders3.forEach((ele) => {
+      ele.classList.remove("bg-[#808080]");
+      ele.classList.add("bg-[#AAAAAA]");
+    });
+
+    if (ele == e.target) {
+      ele.classList.add("bg-[#808080]");
+      ele.classList.remove("bg-[#AAAAAA]");
+    }
+
+    reviewsArr.forEach((review) => {
+      review.classList.add("hidden");
+    });
+    reviewToShow = reviewsArr[Number(ele.dataset.review)];
+    reviewToShow.classList.remove("hidden");
+    animateToRight(reviewToShow);
+    i2 = Number(ele.dataset.review);
+  });
+});
+
+function toggleReview(i2) {
+  reviewsArr.forEach((review) => {
+    review.classList.add("hidden");
+  });
+  reviewToShow = reviewsArr[i2];
+  reviewToShow.classList.remove("hidden");
+
+  sliders3.forEach((slider) => {
+    slider.classList.remove("bg-[#808080]");
+    slider.classList.add("bg-[#AAAAAA]");
+    if (Number(slider.dataset.review) === i2) {
+      slider.classList.remove("bg-[#AAAAAA]");
+      slider.classList.add("bg-[#808080]");
+    }
+  });
+}
+
+reviewLeftArrow.addEventListener("click", () => {
+  i2 == 0 ? (i2 = 2) : i2--;
+
+  toggleReview(i2);
+  animateToLeft(reviewToShow);
+});
+
+reviewRightArrow.addEventListener("click", () => {
+  i2 == 2 ? (i2 = 0) : i2++;
+
+  toggleReview(i2);
+  animateToRight(reviewToShow);
 });
