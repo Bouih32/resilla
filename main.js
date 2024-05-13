@@ -265,7 +265,6 @@ reviewRightArrow.addEventListener("click", () => {
   animateToRight(reviewToShow);
 });
 
-console.log(noAnimation);
 const observer = new IntersectionObserver((sect) => {
   sect.forEach((ele) => {
     if (ele.isIntersecting) {
