@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -63,23 +67,7 @@
     <header
       class="px-[30px] sm:px-[100px] py-4 sm:py-[15px] text-[16px] font-medium noAnimation delay-300"
     >
-      <nav class="flex items-center justify-between relative">
-        <div
-          class="sm:hidden absolute top-[100%] bg-main w-full rounded-b-[30px] transition-all hidden"
-          id="mobileNav"
-        >
-          <ul class="text-headers sm:flex items-center gap-4 text-white">
-            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Home</li>
-            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">About</li>
-            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">
-              Listings
-            </li>
-            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">
-              Services
-            </li>
-            <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Blogs</li>
-          </ul>
-        </div>
+      <nav class="flex items-center justify-between">
         <ul class="hidden text-headers sm:flex items-center gap-4">
           <li
             class="px-4 py-[13px] bg-[#4361EE4D] rounded-[30px] cursor-pointer"
@@ -142,6 +130,18 @@
     <section
       class="bg-grad rounded-b-[800px] sm:h-[902px] h-[894px] flex flex-col gap-[60px] items-center mb-[200px] sm:mb-0 delay-700 noAnimation"
     >
+      <div
+        class="bg-main/90 w-[80%] rounded-b-[30px] sm:hidden hidden"
+        id="mobileNav"
+      >
+        <ul class="text-headers sm:flex items-center gap-4 text-white">
+          <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Home</li>
+          <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">About</li>
+          <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Listings</li>
+          <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Services</li>
+          <li class="px-4 py-[13px] rounded-[30px] cursor-pointer">Blogs</li>
+        </ul>
+      </div>
       <section
         class="flex flex-col sm:flex-row items-center sm:justify-center sm:gap-[125px] gap-[40px] sm:pt-[75px] pt-[34px]"
       >
@@ -1715,7 +1715,7 @@
             </p>
           </div>
           <p
-            class="py-[19px] px-[30px] bg-white rounded-[30px] w-fit text-main text-[16px] font-medium"
+            class="py-[19px] px-[30px] bg-white rounded-[30px] w-fit text-main text-[16px] font-medium cursor-pointer"
           >
             Register Now
           </p>
@@ -1765,12 +1765,12 @@
           Quick Links
         </li>
         <div class="space-y-[12px]">
-          <li>Home</li>
-          <li>About</li>
-          <li>Listings</li>
-          <li>Services</li>
-          <li>Blogs</li>
-          <li>Become a Agent</li>
+          <li class="cursor-pointer">Home</li>
+          <li class="cursor-pointer">About</li>
+          <li class="cursor-pointer">Listings</li>
+          <li class="cursor-pointer">Services</li>
+          <li class="cursor-pointer">Blogs</li>
+          <li class="cursor-pointer">Become a Agent</li>
         </div>
       </ul>
 
@@ -1781,11 +1781,11 @@
           Discovery
         </li>
         <div class="space-y-[12px]">
-          <li>Canada</li>
-          <li>United States</li>
-          <li>Germany</li>
-          <li>Africa</li>
-          <li>India</li>
+          <li class="cursor-pointer">Canada</li>
+          <li class="cursor-pointer">United States</li>
+          <li class="cursor-pointer">Germany</li>
+          <li class="cursor-pointer">Africa</li>
+          <li class="cursor-pointer">India</li>
         </div>
       </ul>
       <div
@@ -1802,15 +1802,21 @@
             type="email"
             placeholder="Email Address"
             class="placeholder:text-[#AAAAAA] placeholder:text-[16px] focus:outline-none w-fit h-fit"
+            id="footerInput"
           />
           <div
-            class="w-[50px] h-[50px] rounded-full bg-main flex items-center justify-center"
+            class="w-[50px] h-[50px] rounded-full bg-main flex items-center justify-center cursor-pointer"
+            id="footerSubmit"
           >
             <img src="images/icons/inputArr.png" alt="arrow" />
           </div>
         </div>
         <p class="mt-[40px]">Follow Us on</p>
-        <img src="images/icons/socials.png" alt="socials" class="mt-[33px]" />
+        <img
+          src="images/icons/socials.png"
+          alt="socials"
+          class="mt-[33px] cursor-pointer"
+        />
       </div>
     </footer>
     <section

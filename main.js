@@ -21,6 +21,8 @@ const reviewRightArrow = document.querySelector("#reviewRightArrow");
 const formInfo = document.querySelector("#formInfo");
 const success = document.querySelector("#success");
 const noAnimation = document.querySelectorAll(".noAnimation");
+const footerInput = document.querySelector("#footerInput");
+const footerSubmit = document.querySelector("#footerSubmit");
 
 function changeSliderColor(i) {
   hero.src = photos[i];
@@ -52,6 +54,7 @@ function animateToLeft(ele) {
 
 burger.addEventListener("click", () => {
   mobileNav.classList.toggle("hidden");
+  mobileNav.classList.add("animateToBottom");
 });
 
 const photos = [
@@ -98,6 +101,16 @@ function handleErrors() {
   if (secondSelect.selectedIndex === 0) {
     secondSelect.classList.add("border", "text-red-700", "border-red-700");
   }
+
+  setTimeout(() => {
+    formInput.classList.remove(
+      "border",
+      "placeholder:text-red-700",
+      "border-red-700"
+    );
+    firstSelect.classList.remove("border", "text-red-700", "border-red-700");
+    secondSelect.classList.remove("border", "text-red-700", "border-red-700");
+  }, 2500);
 }
 
 searchButton.addEventListener("click", () => {
@@ -229,7 +242,10 @@ sliders3.forEach((ele) => {
     });
     reviewToShow = reviewsArr[Number(ele.dataset.review)];
     reviewToShow.classList.remove("hidden");
-    animateToRight(reviewToShow);
+    reviewToShow.classList.add("animateToBottom");
+    setTimeout(() => {
+      reviewToShow.classList.remove("animateToBottom");
+    }, 300);
     i2 = Number(ele.dataset.review);
   });
 });
@@ -274,3 +290,14 @@ const observer = new IntersectionObserver((sect) => {
 });
 
 noAnimation.forEach((ele) => observer.observe(ele));
+
+footerSubmit.addEventListener("click", () => {
+  if (footerInput.value === "") {
+    footerInput.parentElement.classList.add("border", "border-red-700");
+    footerInput.classList.add("placeholder:text-red-700");
+  }
+  setTimeout(() => {
+    footerInput.parentElement.classList.remove("border", "border-red-700");
+    footerInput.classList.remove("placeholder:text-red-700");
+  }, 2000);
+});
